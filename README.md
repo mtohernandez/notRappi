@@ -5,4 +5,4 @@ People that worked on this:
 - Mateo Hernandez
 - Marcos lopez y David Muvdi y Luisa Lopez
 - No entiendo nada
-- alo que tal
+- Hola
