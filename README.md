@@ -1,7 +1,7 @@
 # notRappi
 Not an exact copy but a different approach to deliveries and food. 
 
-Autores: 
+People that worked on this:
 - Mateo Hernandez
-- David Muvdi
+- Marcos lopez
 -
