@@ -31,8 +31,8 @@ class _RestaurantMoleculeState extends State<RestaurantMolecule> {
     return !widget.isSearch ? GestureDetector(
       onTap: () => {},
       child: SizedBox(
-        width: 350.0,
-        height: 100.0,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height / 7.8,
         child: Row(
           children: [
             Container(
