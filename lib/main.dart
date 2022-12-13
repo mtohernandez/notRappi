@@ -15,8 +15,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:not_rappi/screens/home_screen.dart';
-
 import '../widgets/molecules/new_molecule.dart';
+import 'widgets/molecules/restaurant_molecule.dart';
 
 void main() {
   runApp(const MyApp());
