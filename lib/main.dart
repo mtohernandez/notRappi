@@ -15,7 +15,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:not_rappi/screens/home_screen.dart';
-
+import '../widgets/molecules/category_molecule.dart';
 import '../widgets/molecules/new_molecule.dart';
 
 void main() {
