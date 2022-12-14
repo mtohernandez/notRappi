@@ -11,11 +11,11 @@ class SectionAtom extends StatelessWidget {
   // const SectionAtom(this.title, this.isGrid, {super.key});
   @override
   Widget build(BuildContext context) {
-    final restaurants = Provider.of<Restaurants>(context).restaurants;
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          ...restaurants.map((restaurant) {
+    final restaurants = Provider.of<Restaurants>(context).restaurants.take(10);
+    return Column(
+      children: [
+        ...restaurants.map(
+          (restaurant) {
             return RestaurantMolecule(
               restaurantName: restaurant.name,
               imageUrl: restaurant.imgUrl,
@@ -25,9 +25,9 @@ class SectionAtom extends StatelessWidget {
               distance: Random().nextDouble() * 10,
               isSearch: false,
             );
-          }).toList(),
-        ],
-      ),
+          },
+        ).toList(),
+      ],
     );
   }
 }

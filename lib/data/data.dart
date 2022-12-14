@@ -1,3 +1,5 @@
+import '../models/restaurant.dart';
+
 class Data {
 
   // Thinking about making it easy as possible,
