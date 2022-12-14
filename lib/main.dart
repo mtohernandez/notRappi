@@ -14,9 +14,11 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../providers/restaurant_p.dart';
 import 'package:not_rappi/screens/home_screen.dart';
-import '../widgets/molecules/new_molecule.dart';
 import 'widgets/molecules/restaurant_molecule.dart';
+import '../widgets/molecules/new_molecule.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,12 +30,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => Restaurants(),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: HomeScreen(),
       ),
-      home: HomeScreen(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:not_rappi/widgets/atoms/section_atom.dart';
 
 import '../widgets/molecules/new_molecule.dart';
 
@@ -12,7 +13,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Not Rappi'),
       ),
       // Start the testing here
-      body: NewMolecule(),
+      body: SectionAtom(),
     );
   }
 }

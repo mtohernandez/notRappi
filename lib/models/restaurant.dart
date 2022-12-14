@@ -2,13 +2,13 @@ import './product.dart';
 
 class Restaurant {
   //Fields
-  final int id;
+  final String id;
   final String name;
   final String description;
   final String category;
   final String address;
-  final List<Product> menu;
-  final double raiting;
+  final List<dynamic> menu;
+  final double rating;
   final int deliverTime;
   final String imgUrl; 
 
@@ -20,7 +20,7 @@ class Restaurant {
     required this.category, 
     required this.address, 
     required this.menu, 
-    required this.raiting, 
+    required this.rating, 
     required this.deliverTime, 
     required this.imgUrl
   });
