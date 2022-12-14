@@ -15,7 +15,6 @@
 
 import 'package:flutter/material.dart';
 //import 'package:not_rappi/screens/home_screen.dart';
-import 'package:not_rappi/widgets/atoms/restaurants_atom.dart';
 import 'package:not_rappi/widgets/molecules/order_molecule.dart';
 //import '../widgets/molecules/new_molecule.dart';
 
