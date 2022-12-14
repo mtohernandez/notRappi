@@ -2,19 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class RestaurantMolecule extends StatefulWidget {
-  const RestaurantMolecule(
-      {super.key,
-      required this.restaurantName,
-      required this.imageUrl,
-      required this.raiting,
-      required this.ratingAmount,
-      required this.estimatedTime,
-      required this.distance,
-      required this.isSearch});
+  const RestaurantMolecule({
+    super.key, 
+    required this.restaurantName,
+    required this.imageUrl,
+    required this.rating,
+    required this.ratingAmount,
+    required this.estimatedTime,
+    required this.distance,
+    required this.isSearch
+  });
 
   final String restaurantName;
   final String imageUrl;
-  final double raiting;
+  final double rating;
   final int ratingAmount;
   final int estimatedTime;
   final double distance;
@@ -133,7 +134,7 @@ class _RestaurantMoleculeState extends State<RestaurantMolecule> {
                 const SizedBox(
                   height: 5.0,
                 ),
-                _buildMiddleRow(widget.raiting, widget.ratingAmount,
+                _buildMiddleRow(widget.rating, widget.ratingAmount,
                     widget.estimatedTime, widget.distance),
               ],
             ),
@@ -162,7 +163,7 @@ class _RestaurantMoleculeState extends State<RestaurantMolecule> {
             const SizedBox(
               height: 5.0,
             ),
-            _buildMiddleRow(widget.raiting, widget.ratingAmount,
+            _buildMiddleRow(widget.rating, widget.ratingAmount,
                 widget.estimatedTime, widget.distance),
             const SizedBox(
               height: 5.0,
