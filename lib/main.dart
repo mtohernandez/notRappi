@@ -37,9 +37,15 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Not Rappi',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          backgroundColor: const Color(0xffEFEFEF),
+          //! This is a temporary color scheme
+          colorScheme: ColorScheme.fromSwatch(
+            primarySwatch: Colors.red,
+          ).copyWith(
+            secondary: const Color(0xff1D1D1D),
+          ),
         ),
         home: HomeScreen(),
       ),
