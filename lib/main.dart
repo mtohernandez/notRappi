@@ -14,9 +14,11 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:not_rappi/screens/home_screen.dart';
-import '../widgets/molecules/new_molecule.dart';
-import 'widgets/molecules/restaurant_molecule.dart';
+//import 'package:not_rappi/screens/home_screen.dart';
+import 'package:not_rappi/widgets/atoms/restaurants_atom.dart';
+import 'package:not_rappi/widgets/molecules/order_molecule.dart';
+//import '../widgets/molecules/new_molecule.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -28,35 +30,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.grey,
         body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 120.0, horizontal: 8.0),
-          child: Column(
-            children: const [
-              RestaurantMolecule(
-                distance: 3.6, 
-                imageUrl: 'https://media-cdn.tripadvisor.com/media/photo-s/1b/99/44/8e/kfc-faxafeni.jpg',
-                restaurantName: 'KFC Kentuky Fried Chicken',
-                estimatedTime: 24,
-                raitingAmount: 307,
-                raiting: 4.5,
-                isSearch: false,
-              ),
-              RestaurantMolecule(
-                distance: 2.9, 
-                imageUrl: 'https://cnnespanol.cnn.com/wp-content/uploads/2021/10/211014103231-20211014-mcplant-exlarge-169.jpg?quality=100&strip=info',
-                restaurantName: 'MCDonalds',
-                estimatedTime: 30,
-                raitingAmount: 300,
-                raiting: 3.8,
-                isSearch: false,
-              ),
-            ],
-          ),
-        )
+          padding: EdgeInsets.symmetric(vertical: 200.0),
+          child: OrderMolecule(imageUrl: 'https://d1ralsognjng37.cloudfront.net/018f79b0-182e-4c4f-a625-8600e582a1e1.jpeg', restaurantName: 'McDonald\'s'),
+        ),
       )
     );
   }

@@ -6,7 +6,7 @@ class RestaurantMolecule extends StatefulWidget {
     super.key, 
     required this.restaurantName,
     required this.imageUrl,
-    required this.raiting,
+    required this.rating,
     required this.raitingAmount,
     required this.estimatedTime,
     required this.distance,
@@ -15,7 +15,7 @@ class RestaurantMolecule extends StatefulWidget {
 
   final String restaurantName;
   final String imageUrl;
-  final double raiting;
+  final double rating;
   final int raitingAmount;
   final int estimatedTime;
   final double distance;
@@ -123,7 +123,7 @@ class _RestaurantMoleculeState extends State<RestaurantMolecule> {
                     ),
                   ),
                   const SizedBox( height: 5.0,),
-                  _buildMiddleRow(widget.raiting, widget.raitingAmount, widget.estimatedTime, widget.distance),
+                  _buildMiddleRow(widget.rating, widget.raitingAmount, widget.estimatedTime, widget.distance),
                 ],
               ),
               buildDiscountItem()
@@ -147,12 +147,12 @@ class _RestaurantMoleculeState extends State<RestaurantMolecule> {
               Text(
                 widget.restaurantName,
                 style: const TextStyle(
-                  fontSize: 13.5,
+                  fontSize: 13.2,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox( height: 5.0,),
-              _buildMiddleRow(widget.raiting, widget.raitingAmount, widget.estimatedTime, widget.distance),
+              _buildMiddleRow(widget.rating, widget.raitingAmount, widget.estimatedTime, widget.distance),
               const SizedBox( height: 5.0,),
               buildDiscountItem()
             ],
