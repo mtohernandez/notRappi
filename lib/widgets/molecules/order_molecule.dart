@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class OrderMolecule extends StatelessWidget {
-  const OrderMolecule({super.key, required this.imageUrl, required this.restaurantName});
+  const OrderMolecule({super.key, required this.imageUrl, required this.restaurantName, required this.products, required this.state});
 
   final String imageUrl;
   final String restaurantName;
+  final List<Map<String,dynamic>> products;
+  final String state;
   static DateTime date = DateTime.now();
-  static int total = 43000;
 
   Widget buildProductCard(String productName, List<dynamic> additions, BuildContext context, int productQuantity){
     return Padding(
@@ -40,8 +41,17 @@ class OrderMolecule extends StatelessWidget {
       ),
     );
   }
+  
+  //Returns the total of the products you've added to the order 
+  num total(List<Map<String,dynamic>> products){
+    num totalPrice = 0;
+    for(Map<String,dynamic> product in products){
+      totalPrice += (product['price'] * product['amount']);
+    }
+    return totalPrice;
+  }
 
-  Widget buildRestaurantTitle(BuildContext context, String restaurantName, DateTime date, int total){
+  Widget buildRestaurantTitle(BuildContext context, String restaurantName, DateTime date){
     return Row(
       children: [
         Container(
@@ -59,7 +69,7 @@ class OrderMolecule extends StatelessWidget {
         ),
         const SizedBox(width: 7.0,),
         Expanded(
-          flex: 2,
+          flex: 3,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -69,47 +79,30 @@ class OrderMolecule extends StatelessWidget {
             ],
           ),
         ),
-        Text('\$$total', style: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.w400),)
+        Expanded(
+          flex: 3, 
+          child: Text(
+            state, 
+            style: TextStyle(
+              fontSize: 14.0, 
+              fontWeight: FontWeight.w400, 
+              color: state == 'in progress' ? Color.fromARGB(255, 202, 143, 32) : state == 'stand by' ? Colors.red : Colors.green
+            ), 
+            textAlign: TextAlign.center,
+          )
+        ),
+        Text('\$${total(products)}', style: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.w500),)
       ],
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    
-    List<Map<String,dynamic>> products = [
-      {
-        'name': 'Hamburguesa',
-        'amount': 3,
-        'additions': ['papas a la francesa', 'salsa de tomate'],
-      },
-      {
-        'name': 'Gaseosa',
-        'amount': 1,
-        'additions': [],
-      },
-      {
-        'name': 'Papas',
-        'amount': 2,
-        'additions': [],
-      },
-      {
-        'name': 'Pollo Broasted',
-        'amount': 4,
-        'additions': ['papas a la francesa', 'miel'],
-      },
-      {
-        'name': 'Hamburguesa de pollo',
-        'amount': 1,
-        'additions': ['papas a la francesa', 'mayonesa'],
-      },
-    ];
-
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: Column(
         children: [
-          buildRestaurantTitle(context, restaurantName, date, total),
+          buildRestaurantTitle(context, restaurantName, date),
           const SizedBox( height: 10.0,),
           SizedBox(
             width: MediaQuery.of(context).size.width,
@@ -122,13 +115,6 @@ class OrderMolecule extends StatelessWidget {
               },
             ),
           ),
-          // Column(
-          //   children: [
-          //     buildProductCard('Hamburguesa', example, context, 3),
-          //     buildProductCard('Gaseosa', [], context, 1),
-          //     buildProductCard('Papas', [], context, 2),
-          //   ],
-          // )
         ],
       ),
     );
