@@ -15,7 +15,7 @@
 
 import 'package:flutter/material.dart';
 //import 'package:not_rappi/screens/home_screen.dart';
-import 'package:not_rappi/widgets/molecules/order_molecule.dart';
+import './widgets/atoms/orders_atom.dart';
 //import '../widgets/molecules/new_molecule.dart';
 
 
@@ -32,10 +32,10 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.grey,
+        backgroundColor: Color.fromARGB(255, 206, 206, 206),
         body: Padding(
-          padding: EdgeInsets.symmetric(vertical: 200.0),
-          child: OrderMolecule(imageUrl: 'https://d1ralsognjng37.cloudfront.net/018f79b0-182e-4c4f-a625-8600e582a1e1.jpeg', restaurantName: 'McDonald\'s'),
+          padding: EdgeInsets.symmetric(vertical: 40.0),
+          child: OrdersAtom(),
         ),
       )
     );
