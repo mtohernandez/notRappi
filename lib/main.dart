@@ -15,7 +15,8 @@
 
 import 'package:flutter/material.dart';
 //import 'package:not_rappi/screens/home_screen.dart';
-import './widgets/atoms/orders_atom.dart';
+//import './widgets/atoms/orders_atom.dart';
+import './widgets/molecules/search_molecule.dart';
 //import '../widgets/molecules/new_molecule.dart';
 
 
@@ -33,9 +34,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Color.fromARGB(255, 206, 206, 206),
-        body: Padding(
-          padding: EdgeInsets.symmetric(vertical: 40.0),
-          child: OrdersAtom(),
+        body: SearchMolecule(
+          imgURL: 'https://images.unsplash.com/photo-1523912277209-5fd38d4d667e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2slMjBnaXJsfGVufDB8fDB8fA%3D%3D&w=1000&q=80',
+          userName: 'Mari',
+          ordersAmount: 345,
+          address: 'TV #43-12',
         ),
       )
     );
