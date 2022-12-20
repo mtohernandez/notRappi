@@ -39,12 +39,33 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Not Rappi',
         theme: ThemeData(
+          fontFamily: 'Coolvetica',
           backgroundColor: const Color(0xffEFEFEF),
           //! This is a temporary color scheme
           colorScheme: ColorScheme.fromSwatch(
             primarySwatch: Colors.red,
           ).copyWith(
             secondary: const Color(0xff1D1D1D),
+          ),
+          textTheme: const TextTheme(
+            headline1: TextStyle(
+              fontSize: 20,
+              color: Color(0xff1D1D1D),
+              fontWeight: FontWeight.bold,
+            ),
+            headline2: TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+            bodyText1: TextStyle(
+              fontSize: 14,
+              color: Color(0xff1D1D1D),
+            ),
+            bodyText2: TextStyle(
+              fontSize: 14,
+              color: Colors.white,
+            ),
           ),
         ),
         home: HomeScreen(),

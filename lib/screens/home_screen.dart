@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:not_rappi/widgets/atoms/categories_atom.dart';
-import 'package:not_rappi/widgets/atoms/section_atom.dart';
+import 'package:not_rappi/widgets/atoms/general_atom.dart';
+import 'package:not_rappi/widgets/atoms/restaurants_atom.dart';
 
 import '../widgets/molecules/new_molecule.dart';
 
@@ -73,22 +74,34 @@ class HomeScreen extends StatelessWidget {
       ),
       backgroundColor: Theme.of(context).backgroundColor,
       // Start the testing here
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.3,
-              child: CategoriesAtom(),
-            ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            NewMolecule(),
-            const SizedBox(
-              height: 20.0,
-            ),
-            SectionAtom(),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              GeneralAtom(
+                'Categories',
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.35,
+                  child: CategoriesAtom(),
+                ),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              GeneralAtom(
+                'News',
+                child: NewMolecule(),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              GeneralAtom(
+                'Stores',
+                child: RestaurantsAtom(),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../molecules/category_molecule.dart';
 
 class CategoriesAtom extends StatelessWidget {
   @override
@@ -14,20 +15,16 @@ class CategoriesAtom extends StatelessWidget {
         // Space between rown
         mainAxisSpacing: 10,
       ),
-      children: [
-        Container(
-          child: Text('Category 1'),
-        ),
-        Container(
-          child: Text('Category 2'),
-        ),
-        Container(
-          child: Text('Category 3'),
-        ),
-        Container(
-          child: Text('Category 4'),
-        ),
-      ],  
+      children: const [ //! Const for testing purposes
+        CategoryMolecule(
+            title: 'Pizza', imageUrl: 'assets/images/imageTest.jpg'),
+        CategoryMolecule(
+            title: 'Pizza', imageUrl: 'assets/images/imageTest.jpg'),
+        CategoryMolecule(
+            title: 'Pizza', imageUrl: 'assets/images/imageTest.jpg'),
+        CategoryMolecule(
+            title: 'Pizza', imageUrl: 'assets/images/imageTest.jpg'),
+      ],
     );
   }
 }

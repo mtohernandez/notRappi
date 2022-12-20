@@ -113,31 +113,28 @@ class _RestaurantMoleculeState extends State<RestaurantMolecule> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _buildRestaurantImage(widget.isSearch),
-        Padding(
-          padding: const EdgeInsets.only(top: 5.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    widget.restaurantName,
-                    style: const TextStyle(
-                      fontSize: 13.5,
-                      fontWeight: FontWeight.bold,
-                    ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  widget.restaurantName,
+                  style: const TextStyle(
+                    fontSize: 13.5,
+                    fontWeight: FontWeight.bold,
                   ),
-                  const SizedBox(
-                    height: 5.0,
-                  ),
-                  _buildMiddleRow(widget.raiting, widget.ratingAmount,
-                      widget.estimatedTime, widget.distance),
-                ],
-              ),
-              buildDiscountItem()
-            ],
-          ),
+                ),
+                const SizedBox(
+                  height: 5.0,
+                ),
+                _buildMiddleRow(widget.raiting, widget.ratingAmount,
+                    widget.estimatedTime, widget.distance),
+              ],
+            ),
+            buildDiscountItem()
+          ],
         ),
       ],
     );
@@ -150,29 +147,26 @@ class _RestaurantMoleculeState extends State<RestaurantMolecule> {
         const SizedBox(
           width: 7.5,
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                widget.restaurantName,
-                style: const TextStyle(
-                  fontSize: 13.5,
-                  fontWeight: FontWeight.bold,
-                ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              widget.restaurantName,
+              style: const TextStyle(
+                fontSize: 13.5,
+                fontWeight: FontWeight.bold,
               ),
-              const SizedBox(
-                height: 5.0,
-              ),
-              _buildMiddleRow(widget.raiting, widget.ratingAmount,
-                  widget.estimatedTime, widget.distance),
-              const SizedBox(
-                height: 5.0,
-              ),
-              buildDiscountItem()
-            ],
-          ),
+            ),
+            const SizedBox(
+              height: 5.0,
+            ),
+            _buildMiddleRow(widget.raiting, widget.ratingAmount,
+                widget.estimatedTime, widget.distance),
+            const SizedBox(
+              height: 5.0,
+            ),
+            buildDiscountItem()
+          ],
         )
       ],
     );
