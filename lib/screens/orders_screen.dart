@@ -9,15 +9,16 @@ class OrdersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 8.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         //TODO: filter widget
-        children: const [
-          GeneralAtom(
-            'Your Orders', 
-            isAll: false,
-            child: OrdersAtom()
-          )
+        children: [
+          Text(
+            'Your Orders',
+            style: Theme.of(context).textTheme.headline1,
+          ),
+          const Expanded(child: OrdersAtom())
         ],
       ),
     );

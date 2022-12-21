@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import './all_stores_screen.dart';
 import './orders_screen.dart';
+import '../widgets/molecules/search_molecule.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
