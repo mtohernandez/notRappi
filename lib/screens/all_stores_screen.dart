@@ -6,9 +6,8 @@ import 'package:not_rappi/widgets/atoms/restaurants_atom.dart';
 import '../widgets/molecules/new_molecule.dart';
 
 class AllStoresScreen extends StatefulWidget {
-  const AllStoresScreen({
-    Key? key,
-  }) : super(key: key);
+  
+  const AllStoresScreen({super.key});
 
   @override
   State<AllStoresScreen> createState() => _AllStoresScreenState();
@@ -16,10 +15,14 @@ class AllStoresScreen extends StatefulWidget {
 
 class _AllStoresScreenState extends State<AllStoresScreen>
     with AutomaticKeepAliveClientMixin<AllStoresScreen> {
+  
   @override
   bool get wantKeepAlive => true;
+  
+  
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SingleChildScrollView(
@@ -30,13 +33,13 @@ class _AllStoresScreenState extends State<AllStoresScreen>
               isAll: true,
               child: SizedBox(
                 height: MediaQuery.of(context).size.height * 0.35,
-                child: CategoriesAtom(),
+                child: const CategoriesAtom(),
               ),
             ),
             const SizedBox(
               height: 20.0,
             ),
-            GeneralAtom(
+            const GeneralAtom(
               'News',
               isAll: false,
               child: NewMolecule(),
@@ -44,7 +47,7 @@ class _AllStoresScreenState extends State<AllStoresScreen>
             const SizedBox(
               height: 20.0,
             ),
-            GeneralAtom(
+            const GeneralAtom(
               'Stores',
               isAll: true,
               child: RestaurantsAtom(),

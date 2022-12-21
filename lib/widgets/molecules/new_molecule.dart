@@ -2,6 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class NewMolecule extends StatefulWidget {
+
+  const NewMolecule({super.key});
+
   @override
   State<NewMolecule> createState() => _NewMoleculeState();
 }

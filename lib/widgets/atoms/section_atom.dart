@@ -4,10 +4,11 @@ import 'package:provider/provider.dart';
 import 'dart:math';
 import 'package:not_rappi/widgets/molecules/restaurant_molecule.dart';
 
-class RestaurantsAtom extends StatelessWidget {
+class SectionAtom extends StatelessWidget {
+  // final String title;
+  // final bool isGrid;
 
-  const RestaurantsAtom({super.key});
-
+  const SectionAtom({super.key});
   @override
   Widget build(BuildContext context) {
     final restaurants = Provider.of<Restaurants>(context).restaurants.take(10);

@@ -3,7 +3,7 @@ import '../models/order.dart';
 
 
 class Orders with ChangeNotifier {
-  Set<Order> _orders = {};
+  final Set<Order> _orders = {};
 
   Set<Order> get orders {
     return {..._orders};
