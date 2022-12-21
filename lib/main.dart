@@ -14,6 +14,7 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:not_rappi/screens/current_cart_screen.dart';
 import 'package:provider/provider.dart';
 import '../providers/restaurant_p.dart';
 import 'package:not_rappi/screens/home_screen.dart';
@@ -72,6 +73,11 @@ class MyApp extends StatelessWidget {
           ),
         ),
         home: const HomeScreen(),
+        initialRoute: HomeScreen.routeName,
+        routes: {
+          HomeScreen.routeName: (context) => const HomeScreen(),
+          CurrentCartScreen.routeName: (context) => const CurrentCartScreen(),
+        },
       ),
     );
   }
