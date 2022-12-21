@@ -20,7 +20,9 @@ class HomeScreen extends StatelessWidget {
           ),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed('');
+              },
               icon: SvgPicture.asset(
                 'assets/icons/shoppingcart.svg',
                 color: Theme.of(context).colorScheme.secondary,

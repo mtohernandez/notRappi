@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:not_rappi/widgets/atoms/categories_atom.dart';
 import 'package:not_rappi/widgets/atoms/general_atom.dart';
@@ -28,6 +27,7 @@ class _AllStoresScreenState extends State<AllStoresScreen>
           children: [
             GeneralAtom(
               'Categories',
+              isAll: true,
               child: SizedBox(
                 height: MediaQuery.of(context).size.height * 0.35,
                 child: CategoriesAtom(),
@@ -38,6 +38,7 @@ class _AllStoresScreenState extends State<AllStoresScreen>
             ),
             GeneralAtom(
               'News',
+              isAll: false,
               child: NewMolecule(),
             ),
             const SizedBox(
@@ -45,6 +46,7 @@ class _AllStoresScreenState extends State<AllStoresScreen>
             ),
             GeneralAtom(
               'Stores',
+              isAll: true,
               child: RestaurantsAtom(),
             ),
           ],

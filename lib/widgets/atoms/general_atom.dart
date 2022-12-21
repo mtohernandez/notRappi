@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class GeneralAtom extends StatelessWidget {
   final String title;
   final Widget child;
-  const GeneralAtom(this.title, {required this.child, super.key});
+  final bool isAll;
+  const GeneralAtom(this.title,
+      {required this.child, required this.isAll, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +20,25 @@ class GeneralAtom extends StatelessWidget {
                 title,
                 style: Theme.of(context).textTheme.headline1,
               ),
-              //TODO: Make it a button
-              const Text(
-                'See all',
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 12.0,
+              if (isAll)
+                TextButton(
+                  style: ButtonStyle(
+                    padding: MaterialStateProperty.all(
+                      EdgeInsets.zero,
+                    ),
+                    minimumSize: MaterialStateProperty.all(
+                      const Size(40, 10),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: const Text(
+                    'See all',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 12.0,
+                    ),
+                  ),
                 ),
-              ),
             ],
           ),
         Padding(
