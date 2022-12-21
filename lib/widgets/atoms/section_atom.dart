@@ -8,7 +8,7 @@ class SectionAtom extends StatelessWidget {
   // final String title;
   // final bool isGrid;
 
-  // const SectionAtom(this.title, this.isGrid, {super.key});
+  const SectionAtom({super.key});
   @override
   Widget build(BuildContext context) {
     final restaurants = Provider.of<Restaurants>(context).restaurants.take(10);

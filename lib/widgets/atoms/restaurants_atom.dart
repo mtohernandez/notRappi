@@ -5,6 +5,9 @@ import 'dart:math';
 import 'package:not_rappi/widgets/molecules/restaurant_molecule.dart';
 
 class RestaurantsAtom extends StatelessWidget {
+
+  const RestaurantsAtom({super.key});
+
   @override
   Widget build(BuildContext context) {
     final restaurants = Provider.of<Restaurants>(context).restaurants.take(10);

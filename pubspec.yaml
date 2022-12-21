@@ -69,6 +69,8 @@ flutter:
     - assets/icons/starIcon.svg
     - assets/icons/timerIcon.svg
     - assets/icons/shoppingcart.svg
+    - assets/icons/settingsIcon.svg
+    - assets/icons/uparrowIcon.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

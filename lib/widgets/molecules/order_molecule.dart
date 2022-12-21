@@ -86,7 +86,7 @@ class OrderMolecule extends StatelessWidget {
             style: TextStyle(
               fontSize: 14.0, 
               fontWeight: FontWeight.w400, 
-              color: state == 'in progress' ? Color.fromARGB(255, 202, 143, 32) : state == 'stand by' ? Colors.red : Colors.green
+              color: state == 'in progress' ? const Color.fromARGB(255, 202, 143, 32) : state == 'stand by' ? Colors.red : Colors.green
             ), 
             textAlign: TextAlign.center,
           )

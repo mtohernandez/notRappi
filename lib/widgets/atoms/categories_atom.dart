@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import '../molecules/category_molecule.dart';
 
 class CategoriesAtom extends StatelessWidget {
+
+  const CategoriesAtom({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GridView(

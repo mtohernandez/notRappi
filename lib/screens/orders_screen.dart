@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../widgets/atoms/orders_atom.dart';
+import '../widgets/atoms/general_atom.dart';
 
 
 class OrdersScreen extends StatelessWidget {
@@ -6,6 +8,17 @@ class OrdersScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        //TODO: filter widget
+        children: const [
+          GeneralAtom(
+            'Your Orders', 
+            child: OrdersAtom()
+          )
+        ],
+      ),
+    );
   }
 }

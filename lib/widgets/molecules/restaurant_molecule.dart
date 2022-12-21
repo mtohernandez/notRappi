@@ -146,45 +146,49 @@ class _RestaurantMoleculeState extends State<RestaurantMolecule> {
   }
 
   Widget buildNotSearch() {
-    return Row(
-      children: [
-        _buildRestaurantImage(widget.isSearch),
-        const SizedBox(
-          width: 7.5,
-        ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              widget.restaurantName,
-              style: Theme.of(context).textTheme.headline3,
-            ),
-            const SizedBox(
-              height: 5.0,
-            ),
-            _buildMiddleRow(widget.rating, widget.ratingAmount,
-                widget.estimatedTime, widget.distance),
-            const SizedBox(
-              height: 5.0,
-            ),
-            buildDiscountItem()
-          ],
-        )
-      ],
+    return FittedBox(
+      child: Row(
+        children: [
+          _buildRestaurantImage(widget.isSearch),
+          const SizedBox(
+            width: 7.5,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                widget.restaurantName,
+                style: Theme.of(context).textTheme.headline3,
+              ),
+              const SizedBox(
+                height: 5.0,
+              ),
+              _buildMiddleRow(widget.rating, widget.ratingAmount,
+                  widget.estimatedTime, widget.distance),
+              const SizedBox(
+                height: 5.0,
+              ),
+              buildDiscountItem()
+            ],
+          )
+        ],
+      ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: !widget.isSearch
-          ? MediaQuery.of(context).size.width
-          : MediaQuery.of(context).size.width - 1,
-      height: !widget.isSearch
-          ? MediaQuery.of(context).size.height / 7.8
-          : MediaQuery.of(context).size.height / 6.01,
-      child: !widget.isSearch ? buildNotSearch() : buildSearch(),
+    return FittedBox(
+      child: SizedBox(
+        width: !widget.isSearch
+            ? MediaQuery.of(context).size.width
+            : MediaQuery.of(context).size.width - 1,
+        height: !widget.isSearch
+            ? MediaQuery.of(context).size.height / 7.8
+            : MediaQuery.of(context).size.height / 6.01,
+        child: !widget.isSearch ? buildNotSearch() : buildSearch(),
+      ),
     );
   }
 }

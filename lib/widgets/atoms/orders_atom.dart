@@ -121,28 +121,31 @@ class OrdersAtom extends StatelessWidget {
       }
     ];
 
-    return ListView.builder(
-      padding: EdgeInsets.zero,
-      itemCount: products.length,
-      itemBuilder: ((context, index) {
-        return Column(
-          children: [
-            OrderMolecule(
-              imageUrl: products[index]['imgURL'], 
-              restaurantName: products[index]['name'],
-              products: products[index]['products'],
-              state: products[index]['state'],
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 17.0),
-              child: Divider(
-                thickness: 1.0, 
-                color: Colors.black12,
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.75,
+      child: ListView.builder(
+        padding: EdgeInsets.zero,
+        itemCount: products.length,
+        itemBuilder: ((context, index) {
+          return Column(
+            children: [
+              OrderMolecule(
+                imageUrl: products[index]['imgURL'], 
+                restaurantName: products[index]['name'],
+                products: products[index]['products'],
+                state: products[index]['state'],
               ),
-            )
-          ],
-        );
-      })
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 17.0),
+                child: Divider(
+                  thickness: 1.0, 
+                  color: Colors.black12,
+                ),
+              )
+            ],
+          );
+        })
+      ),
     );
   }
 }
