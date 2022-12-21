@@ -38,15 +38,20 @@ class _RestaurantMoleculeState extends State<RestaurantMolecule> {
         ),
         Text(
           ' $rating',
-          style: const TextStyle(
-              fontSize: 10.0, fontWeight: FontWeight.bold, color: Colors.red),
+          style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                color: Colors.red,
+                fontWeight: FontWeight.bold,
+              ),
         ),
         Text(
           ' ($ratingAmount)',
-          style: TextStyle(
-            fontSize: 10.0,
-            color: Theme.of(context).colorScheme.secondary.withOpacity(.5),
-          ),
+          style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                color: Theme.of(context)
+                    .textTheme
+                    .bodyText2!
+                    .color!
+                    .withOpacity(0.5),
+              ),
         ),
         const SizedBox(
           width: 5.0,
@@ -58,7 +63,7 @@ class _RestaurantMoleculeState extends State<RestaurantMolecule> {
         ),
         Text(
           ' $estimatedTime min ',
-          style: const TextStyle(fontSize: 10.0),
+          style: Theme.of(context).textTheme.bodyText2,
         ),
         Container(
           width: 4.5,
@@ -72,8 +77,8 @@ class _RestaurantMoleculeState extends State<RestaurantMolecule> {
           width: 5.0,
         ),
         Text(
-          distance.toStringAsFixed(1) + 'km',
-          style: const TextStyle(fontSize: 10.0),
+          '${distance.toStringAsFixed(1)}km',
+          style: Theme.of(context).textTheme.bodyText2,
         )
       ],
     );
@@ -85,11 +90,11 @@ class _RestaurantMoleculeState extends State<RestaurantMolecule> {
         color: Colors.red,
         borderRadius: BorderRadius.circular(20.0),
       ),
-      child: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 8.0),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Text(
           '20% OFF TODAY',
-          style: TextStyle(fontSize: 10.0, color: Colors.white),
+          style: Theme.of(context).textTheme.bodyText1,
         ),
       ),
     );
@@ -123,6 +128,7 @@ class _RestaurantMoleculeState extends State<RestaurantMolecule> {
               children: [
                 Text(
                   widget.restaurantName,
+                  style: Theme.of(context).textTheme.headline3,
                 ),
                 const SizedBox(
                   height: 5.0,
@@ -151,10 +157,7 @@ class _RestaurantMoleculeState extends State<RestaurantMolecule> {
           children: [
             Text(
               widget.restaurantName,
-              style: const TextStyle(
-                fontSize: 13.5,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(context).textTheme.headline3,
             ),
             const SizedBox(
               height: 5.0,

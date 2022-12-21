@@ -5,6 +5,7 @@ class CategoriesAtom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView(
+      physics: const NeverScrollableScrollPhysics(),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         // Amount of columns
         crossAxisCount: 2,
@@ -15,7 +16,8 @@ class CategoriesAtom extends StatelessWidget {
         // Space between rown
         mainAxisSpacing: 10,
       ),
-      children: const [ //! Const for testing purposes
+      children: const [
+        //! Const for testing purposes
         CategoryMolecule(
             title: 'Pizza', imageUrl: 'assets/images/imageTest.jpg'),
         CategoryMolecule(

@@ -9,7 +9,7 @@ class NewMolecule extends StatefulWidget {
 class _NewMoleculeState extends State<NewMolecule> {
   Widget _buildNewContainer(int index) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 5.0),
+      padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 5.0),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: Row(
