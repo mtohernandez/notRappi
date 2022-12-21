@@ -60,11 +60,11 @@ class MyApp extends StatelessWidget {
             ),
             bodyText1: TextStyle(
               fontSize: 14,
-              color: Color(0xff1D1D1D),
+              color: Colors.white,
             ),
             bodyText2: TextStyle(
               fontSize: 14,
-              color: Colors.white,
+              color: Color(0xff1D1D1D),
             ),
           ),
         ),

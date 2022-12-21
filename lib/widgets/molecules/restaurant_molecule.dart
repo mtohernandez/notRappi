@@ -43,8 +43,10 @@ class _RestaurantMoleculeState extends State<RestaurantMolecule> {
         ),
         Text(
           ' ($ratingAmount)',
-          style: const TextStyle(
-              fontSize: 10.0, color: Color.fromARGB(255, 102, 102, 102)),
+          style: TextStyle(
+            fontSize: 10.0,
+            color: Theme.of(context).colorScheme.secondary.withOpacity(.5),
+          ),
         ),
         const SizedBox(
           width: 5.0,
@@ -121,10 +123,6 @@ class _RestaurantMoleculeState extends State<RestaurantMolecule> {
               children: [
                 Text(
                   widget.restaurantName,
-                  style: const TextStyle(
-                    fontSize: 13.5,
-                    fontWeight: FontWeight.bold,
-                  ),
                 ),
                 const SizedBox(
                   height: 5.0,
@@ -148,6 +146,7 @@ class _RestaurantMoleculeState extends State<RestaurantMolecule> {
           width: 7.5,
         ),
         Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
