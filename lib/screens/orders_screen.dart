@@ -15,8 +15,11 @@ class OrdersScreen extends StatelessWidget {
             'Your Orders',
             style: Theme.of(context).textTheme.headline1,
           ),
-          const Expanded(
-            child: OrdersAtom(),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.6,
+            child: const Expanded(
+              child: OrdersAtom(),
+            ),
           )
         ],
       ),
